@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2019 University of York, UK.
+
+    This project was initiated through a donation of source code by the
+    University of York, UK. It contains free software; you can redistribute
+    it and/or modify it under the terms of the GNU General Public License as
+    published by the Free Software Foundation; either version 2 of the
+    License, or any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License along
+    with this program; if not, write to the Free Software Foundation, Inc.,
+    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+    For more information please contact:
+
+    Web Services Group
+    IT Service
+    University of York
+    YO10 5DD
+  United Kingdom
+
+-->
+
+<!--
+  @author Kelvin Hai {@link <a href="mailto:kelvin.hai@york.ac.uk">kelvin.hai@york.ac.uk</a>}
+  @version $Revision$ $Date$
+-->
+<manifest>
+	<plugin>
+		<name value="York Group Manager" />
+		<description value="Enhanced group management facilities." />
+		<handle value="groupman" />
+		<version value="3.1.0" />
+		<requires>
+			<bbversion value="9.1.0.0" />
+		</requires>
+		<vendor>
+			<id value="york" />
+			<name value="University of York" />
+			<url value="http://www.york.ac.uk/" />
+			<description value="University of York, UK" />
+		</vendor>
+
+		<!-- Extension tools definition -->
+		<application-defs>
+			<application handle="groupman" type="course" use-ssl="false"
+				name="Group Manager Application" can-allow-guest="false" small-icon=""
+				large-icon="">
+				<description lang="en_US">Group Manager Course Control Panel Tool</description>
+				<links>
+					<link>
+						<type value="course_tool" />
+						<name value="UoY Batch Allocate Groups" />
+						<url value="showgroups" />
+						<description value="" />
+					</link>
+				</links>
+			</application>
+		</application-defs>
+
+		<permissions>
+			<permission type="attribute" name="user.personalinfo" actions="get,set" />
+			<permission type="persist" name="groupmembership" actions="create" />
+			<permission type="attribute" name="user.authinfo" actions="get" />
+			<permission type="java.util.PropertyPermission" name="*" actions="read,write" />
+
+			<!-- Minimum permissions to support Spring -->
+			<permission type="java.lang.reflect.ReflectPermission" name="suppressAccessChecks" />
+			<permission type="java.lang.RuntimePermission" name="accessDeclaredMembers" />
+			<permission type="java.lang.RuntimePermission" name="createClassLoader" />
+			<permission type="java.lang.RuntimePermission" name="setContextClassLoader" />
+			<permission type="java.io.FilePermission" name="${java.home}/lib/*" actions="read" />
+		</permissions>
+	</plugin>
+</manifest>
+

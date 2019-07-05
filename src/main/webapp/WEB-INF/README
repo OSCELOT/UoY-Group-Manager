@@ -1,0 +1,10 @@
+* Development IDE: STS 3.3.0 with Gradle plugin installed
+* Framework: Spring MVC 3.1.1 (Annotation)
+* Project Type: Gradle converted from Spring MVC Template project
+* Dependencies management: Gradle
+* Bb Version: 9.1SP11 (9.1.110082.0)
+* Tested on: Bb 9.1SP8, 9.1SP11, 9.1SP12 
+
+* Fix IE9 issue: bbNG taglib not displaying properly. DOCTYPE added. 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
